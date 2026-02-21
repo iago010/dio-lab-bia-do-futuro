@@ -1,0 +1,7 @@
+data,descricao,valor,alerta
+2026-02-15,Transferência recebida,3000,Origem desconhecida, possível fraude
+2026-02-16,Pagamento boleto,500,Valor incompatível com histórico de gastos
+2026-02-17,Compra online,1200,Cartão não reconhecido, suspeita de clonagem
+2026-02-18,Pix recebido,10000,Valor elevado, fora do padrão do usuário
+2026-02-19,Saque caixa eletrônico,2000,Localização incomum
+2026-02-20,Transferência enviada,15000,Valor acima do limite usual
