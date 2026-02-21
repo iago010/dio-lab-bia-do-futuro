@@ -1,0 +1,8 @@
+[
+  {"nome": "Phishing por e-mail", "descricao": "Email fraudulento solicitando dados de login ou senha do banco", "categoria": "Phishing", "severidade": "Alta"},
+  {"nome": "Clonagem de cartão", "descricao": "Uso não autorizado do cartão em estabelecimentos ou online", "categoria": "Cartão", "severidade": "Alta"},
+  {"nome": "Golpe do boleto falso", "descricao": "Envio de boletos falsos que parecem legítimos", "categoria": "Boleto", "severidade": "Média"},
+  {"nome": "Aplicativo falso", "descricao": "Instalação de app que simula o banco e captura credenciais", "categoria": "App", "severidade": "Alta"},
+  {"nome": "SMS falso", "descricao": "Mensagem pedindo código de verificação ou senha", "categoria": "SMS", "severidade": "Alta"},
+  {"nome": "Transferência suspeita", "descricao": "Solicitação de transferência para conta desconhecida", "categoria": "Transferência", "severidade": "Alta"}
+]
