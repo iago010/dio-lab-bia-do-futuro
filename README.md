@@ -1,149 +1,323 @@
-# 🤖 Agente Financeiro Inteligente com IA Generativa
+# 🔒 SegurAI - Assistente de Segurança Bancária
 
-## Contexto
+Um agente inteligente especializado em segurança bancária e prevenção de fraudes digitais. **SegurAI** orienta usuários a identificar, prevenir e reagir a tentativas de fraude de forma educativa e segura.
 
-Os assistentes virtuais no setor financeiro estão evoluindo de simples chatbots reativos para **agentes inteligentes e proativos**. Neste desafio, você vai idealizar e prototipar um agente financeiro que utiliza IA Generativa para:
-
-- **Antecipar necessidades** ao invés de apenas responder perguntas
-- **Personalizar** sugestões com base no contexto de cada cliente
-- **Cocriar soluções** financeiras de forma consultiva
-- **Garantir segurança** e confiabilidade nas respostas (anti-alucinação)
-
-> [!TIP]
-> Na pasta [`examples/`](./examples/) você encontra referências de implementação para cada etapa deste desafio.
+![SegurAI Interface](./assets/print-inicio.png)
 
 ---
 
-## O Que Você Deve Entregar
+## 📋 Índice
 
-### 1. Documentação do Agente
-
-Defina **o que** seu agente faz e **como** ele funciona:
-
-- **Caso de Uso:** Qual problema financeiro ele resolve? (ex: consultoria de investimentos, planejamento de metas, alertas de gastos)
-- **Persona e Tom de Voz:** Como o agente se comporta e se comunica?
-- **Arquitetura:** Fluxo de dados e integração com a base de conhecimento
-- **Segurança:** Como evitar alucinações e garantir respostas confiáveis?
-
-📄 **Template:** [`docs/01-documentacao-agente.md`](./docs/01-documentacao-agente.md)
-
----
-
-### 2. Base de Conhecimento
-
-Utilize os **dados mockados** disponíveis na pasta [`data/`](./data/) para alimentar seu agente:
-
-| Arquivo | Formato | Descrição |
-|---------|---------|-----------|
-| `transacoes.csv` | CSV | Histórico de transações do cliente |
-| `historico_atendimento.csv` | CSV | Histórico de atendimentos anteriores |
-| `perfil_investidor.json` | JSON | Perfil e preferências do cliente |
-| `produtos_financeiros.json` | JSON | Produtos e serviços disponíveis |
-
-Você pode adaptar ou expandir esses dados conforme seu caso de uso.
-
-📄 **Template:** [`docs/02-base-conhecimento.md`](./docs/02-base-conhecimento.md)
+- [Visão Geral](#visão-geral)
+- [Características](#características)
+- [Arquitetura](#arquitetura)
+- [Requisitos](#requisitos)
+- [Configuração](#configuração)
+- [Como Usar](#como-usar)
+- [Base de Conhecimento](#base-de-conhecimento)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Segurança e Limitações](#segurança-e-limitações)
 
 ---
 
-### 3. Prompts do Agente
+## 🎯 Visão Geral
 
-Documente os prompts que definem o comportamento do seu agente:
+### Problema
 
-- **System Prompt:** Instruções gerais de comportamento e restrições
-- **Exemplos de Interação:** Cenários de uso com entrada e saída esperada
-- **Tratamento de Edge Cases:** Como o agente lida com situações limite
+Usuários de serviços bancários digitais enfrentam crescentes ameaças de fraude: phishing, clonagem de cartão, transações suspeitas e golpes sofisticados. Muitas pessoas não sabem como identificar e proteger-se contra esses ataques.
 
-📄 **Template:** [`docs/03-prompts.md`](./docs/03-prompts.md)
+### Solução
 
----
+**SegurAI** oferece:
+- ✅ Análise de padrões suspeitos em transações
+- ✅ Alertas educativos sobre possíveis fraudes
+- ✅ Orientações claras para proteger contas e cartões
+- ✅ Ensino de boas práticas de segurança digital
+- ✅ Validação de transações antes de qualquer ação
 
-### 4. Aplicação Funcional
+### Público-Alvo
 
-Desenvolva um **protótipo funcional** do seu agente:
-
-- Chatbot interativo (sugestão: Streamlit, Gradio ou similar)
-- Integração com LLM (via API ou modelo local)
-- Conexão com a base de conhecimento
-
-📁 **Pasta:** [`src/`](./src/)
+Projeto para fins didáticos.
 
 ---
 
-### 5. Avaliação e Métricas
+## ✨ Características
 
-Descreva como você avalia a qualidade do seu agente:
-
-**Métricas Sugeridas:**
-- Precisão/assertividade das respostas
-- Taxa de respostas seguras (sem alucinações)
-- Coerência com o perfil do cliente
-
-📄 **Template:** [`docs/04-metricas.md`](./docs/04-metricas.md)
-
----
-
-### 6. Pitch
-
-Grave um **pitch de 3 minutos** (estilo elevador) apresentando:
-
-- Qual problema seu agente resolve?
-- Como ele funciona na prática?
-- Por que essa solução é inovadora?
-
-📄 **Template:** [`docs/05-pitch.md`](./docs/05-pitch.md)
+| Feature | Descrição |
+|---------|-----------|
+| 🤖 **Agente Inteligente** | Respostas contextalizadas usando LLM |
+| 📊 **Base de Conhecimento** | Dados estruturados sobre fraudes e boas práticas |
+| 👤 **Contexto do Cliente** | Análise personalizada baseada no perfil do usuário |
+| 🛡️ **Anti-Alucinação** | Respostas fundamentadas apenas em dados confiáveis |
+| 📱 **Interface Web** | Chatbot intuitivo via Streamlit |
+| 🌐 **Integração Ollama** | Execução local do modelo de IA |
 
 ---
 
-## Ferramentas Sugeridas
-
-Todas as ferramentas abaixo possuem versões gratuitas:
-
-| Categoria | Ferramentas |
-|-----------|-------------|
-| **LLMs** | [ChatGPT](https://chat.openai.com/), [Copilot](https://copilot.microsoft.com/), [Gemini](https://gemini.google.com/), [Claude](https://claude.ai/), [Ollama](https://ollama.ai/) |
-| **Desenvolvimento** | [Streamlit](https://streamlit.io/), [Gradio](https://www.gradio.app/), [Google Colab](https://colab.research.google.com/) |
-| **Orquestração** | [LangChain](https://www.langchain.com/), [LangFlow](https://www.langflow.org/), [CrewAI](https://www.crewai.com/) |
-| **Diagramas** | [Mermaid](https://mermaid.js.org/), [Draw.io](https://app.diagrams.net/), [Excalidraw](https://excalidraw.com/) |
-
----
-
-## Estrutura do Repositório
+## 🏗️ Arquitetura
 
 ```
-📁 lab-agente-financeiro/
-│
-├── 📄 README.md
-│
-├── 📁 data/                          # Dados mockados para o agente
-│   ├── historico_atendimento.csv     # Histórico de atendimentos (CSV)
-│   ├── perfil_investidor.json        # Perfil do cliente (JSON)
-│   ├── produtos_financeiros.json     # Produtos disponíveis (JSON)
-│   └── transacoes.csv                # Histórico de transações (CSV)
-│
-├── 📁 docs/                          # Documentação do projeto
-│   ├── 01-documentacao-agente.md     # Caso de uso e arquitetura
-│   ├── 02-base-conhecimento.md       # Estratégia de dados
-│   ├── 03-prompts.md                 # Engenharia de prompts
-│   ├── 04-metricas.md                # Avaliação e métricas
-│   └── 05-pitch.md                   # Roteiro do pitch
-│
-├── 📁 src/                           # Código da aplicação
-│   └── app.py                        # (exemplo de estrutura)
-│
-├── 📁 assets/                        # Imagens e diagramas
-│   └── ...
-│
-└── 📁 examples/                      # Referências e exemplos
-    └── README.md
+┌─────────────────────────────────────────────┐
+│           Usuário (Web Browser)             │
+└────────────────┬────────────────────────────┘
+                 │
+┌────────────────▼─────────────────────────────┐
+│         Interface Streamlit                  │
+│  (Formulário de pergunta + Chat)            │
+└────────────────┬─────────────────────────────┘
+                 │
+┌────────────────▼─────────────────────────────┐
+│      Processamento (app.py)                  │
+│  • Carregamento de dados                     │
+│  • Construção de contexto                    │
+│  • Validação de prompts                      │
+└────────────────┬─────────────────────────────┘
+                 │
+    ┌────────────┴───────────────┐
+    │                            │
+┌───▼──────────────┐   ┌────────▼───────────────┐
+│  Base de Dados   │   │   Ollama API           │
+│  (JSON/CSV)      │   │  (GLM-5:cloud)         │
+│  • Fraudes       │   │  • LLM Processing      │
+│  • Boas práticas │   │  • Response Generation │
+│  • FAQ           │   └───────────────────────┘
+│  • Transações    │
+└──────────────────┘
 ```
 
 ---
 
-## Dicas Finais
+## 📦 Requisitos
 
-1. **Comece pelo prompt:** Um bom system prompt é a base de um agente eficaz
-2. **Use os dados mockados:** Eles garantem consistência e evitam problemas com dados sensíveis
-3. **Foque na segurança:** No setor financeiro, evitar alucinações é crítico
-4. **Teste cenários reais:** Simule perguntas que um cliente faria de verdade
-5. **Seja direto no pitch:** 3 minutos passam rápido, vá ao ponto
+- **Python** 3.8+
+- **Ollama** (para executar o modelo GLM-5:cloud)
+- Dependências Python (veja `requirements.txt`)
+
+### Stack Tecnológico
+
+- 🐍 **Python** - Linguagem principal
+- 📊 **Pandas** - Processamento de dados
+- 🎨 **Streamlit** - Interface web
+- 🤖 **Ollama** - Engine de IA local
+- 🔗 **Requests** - HTTP client para Ollama
+
+---
+
+## ⚙️ Configuração
+
+### Estrutura de Dados
+
+Todos os dados devem estar na pasta `data/`:
+
+```
+data/
+├── cliente.json                  # Dados do cliente
+├── fraudes_comuns.json          # Exemplos de fraudes conhecidas
+├── boas_praticas_seguranca.json # Guia de boas práticas
+├── faq_banco.csv                # FAQ do banco
+└── transacoes_suspeitas.csv     # Padrões de transações anormais
+```
+
+### Variáveis de Configuração
+
+No arquivo `src/app.py`, ajuste se necessário:
+
+```python
+OLLAMA_URL = "http://localhost:11434/api/generate"
+MODELO = "glm-5:cloud"  # Mude para outro modelo se preferir
+```
+
+**Modelos disponíveis no Ollama:**
+- `mistral`
+- `llama2`
+- `neural-chat`
+- `dolphin-mixtral`
+
+---
+
+## 💬 Como Usar
+
+### 1. Iniciar a aplicação
+
+```bash
+streamlit run src/app.py
+```
+
+A aplicação abrirá em `http://localhost:8501`
+
+### 2. Exemplos de Perguntas
+
+**Exemplos que o SegurAI está preparado para responder:**
+
+- "Recebi um link estranho por email, como verificar se é seguro?"
+- "Achei uma transação estranha na minha conta, o que fazer?"
+- "Qual é a melhor forma de criar uma senha forte?"
+- "Como ativar autenticação 2FA?"
+- "O que é phishing e como me proteger?"
+- "Minha conta foi hackeada, quais são os primeiros passos?"
+
+### 3. Interface
+
+```
+┌─────────────────────────────────────────────┐
+│  SegurAI - Assistente de Segurança Bancária │
+└─────────────────────────────────────────────┘
+│                                             │
+│ [Chat Message 1] [Chat Message 2]          │
+│                                             │
+│ ┌──────────────────────────────────────┐   │
+│ │ Faça sua pergunta sobre segurança... │   │
+│ └──────────────────────────────────────┘   │
+│                                             │
+```
+
+---
+
+## 📚 Base de Conhecimento
+
+### Dados Utilizados
+
+| Arquivo | Formato | Conteúdo |
+|---------|---------|----------|
+| `fraudes_comuns.json` | JSON | Lista de golpes (phishing, clonagem, etc.) com descrições e severidade |
+| `boas_praticas_seguranca.json` | JSON | Guia de segurança bancária digital |
+| `faq_banco.csv` | CSV | Perguntas frequentes e respostas sobre fraude |
+| `transacoes_suspeitas.csv` | CSV | Padrões que indicam anomalias em transações |
+| `cliente.json` | JSON | Dados simulados do cliente para contexto |
+
+### Exemplo de Dado Carregado
+
+```json
+{
+  "id_cliente": "CLI-2026-0001",
+  "nome": "Jonas Silva",
+  "conta_bancaria": {
+    "banco": "Banco Exemplo",
+    "saldo_atual": 8450.75,
+    "limite_pix_diario": 5000.0
+  },
+  "seguranca": {
+    "autenticacao_dois_fatores": true,
+    "ultimo_login": "2026-02-21T18:45:00"
+  }
+}
+```
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+segurai/
+├── README.md                              # Este arquivo
+├── requirements.txt                       # Dependências Python
+├── assets/                                # Recursos visuais
+│   ├── print-inicio.png                  # Screenshot da aplicação
+│   ├── README.md                         # Instruções de assets
+│   └── RoteiroLab.md                     # Roteiro de laboratório
+├── data/                                  # Base de conhecimento
+│   ├── cliente.json                      # Perfil do cliente
+│   ├── fraudes_comuns.json               # Catálogo de fraudes
+│   ├── boas_praticas_seguranca.json      # Boas práticas
+│   ├── faq_banco.csv                     # FAQ
+│   └── transacoes_suspeitas.csv          # Padrões suspeitos
+├── docs/                                  # Documentação
+│   ├── 01-documentacao-agente.md         # Design do agente
+│   ├── 02-base-conhecimento.md           # Detalhes dos dados
+│   ├── 03-prompts.md                     # Exemplos de prompts
+│   ├── 04-metricas.md                    # KPIs e métricas
+│   └── 05-pitch.md                       # Pitch de vendas
+├── examples/                              # Exemplos de uso
+│   └── README.md
+├── src/                                   # Código-fonte
+│   ├── app.py                            # Aplicação principal
+│   └── README.md                         # Instruções de código
+└── venv/                                  # Ambiente virtual (não versionar)
+```
+
+---
+
+## 🔒 Segurança e Limitações
+
+### ✅ Estratégias de Segurança
+
+- **Validação de Contexto:** Apenas dados da base de conhecimento são usados
+- **Anti-Alucinação:** Sistema prompt força respostas baseadas em fatos
+- **Anonimização:** Todos os dados são mockados, sem informações reais
+- **Redirecionamento:** Consultas fora do escopo são redirecionadas para canais oficiais
+
+### ❌ Limitações Declaradas
+
+- 🚫 Não realiza transações bancárias nem acessa contas reais
+- 🚫 Não substitui atendimento oficial do banco
+- 🚫 Não garante detecção de 100% das fraudes
+- 🚫 Não fornece aconselhamento financeiro ou jurídico específico
+- 🚫 Respostas dependem da qualidade do modelo Ollama
+
+### 🛡️ Boas Práticas
+
+- Sempre execute o Ollama em rede privada (localhost)
+- Não salve dados reais de clientes
+- Revise prompts antes de produção
+- Implemente logging para auditoria
+- Validar respostas antes de exibir ao usuário
+
+---
+
+## 🎓 Exemplos de Casos de Uso
+
+### Caso 1: Alertar sobre Phishing
+
+**Usuário:** "Recebi um email do 'Banco' pedindo para atualizar minha senha. Devo clicar?"
+
+**SegurAI:** Analisa o padrão, identifica como phishing clássico e sugere:
+- ❌ Nunca clicar em links de email
+- ✅ Acessar site oficial diretamente
+- ✅ Verificar email original do banco
+
+### Caso 2: Validar Transação Suspeita
+
+**Usuário:** "Vi uma transação PIX de R$ 5.000 que não fiz. O que faço?"
+
+**SegurAI:** Oferece passos concretos:
+1. Não pagar ou fazer novas transações
+2. Contatar banco imediatamente
+3. Bloquear PIX se disponível
+4. Ativar autenticação 2FA
+
+### Caso 3: Orientação Preventiva
+
+**Usuário:** "Como criar uma senha forte?"
+
+**SegurAI:** Fornece boas práticas:
+- Mínimo 12 caracteres
+- Combinação de caracteres especiais
+- Sem informações pessoais
+- Unique para cada conta
+
+---
+
+## 📞 Suporte e Contribuições
+
+### Áreas para Melhoria
+
+- [ ] Expansão da base de conhecimento
+- [ ] Integração com APIs de bancos reais
+- [ ] Suporte multilíngue
+- [ ] Dashboard de métricas
+- [ ] Cache de respostas comuns
+
+### Contato
+
+Para dúvidas ou sugestões sobre o projeto, consulte a documentação em `docs/`.
+
+---
+
+## 📄 Licença
+
+Este projeto é um protótipo educacional para demonstração de agentes de IA em segurança financeira.
+
+---
+
+**Desenvolvido com ❤️ para segurança digital**
+

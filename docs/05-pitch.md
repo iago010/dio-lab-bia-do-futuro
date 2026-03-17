@@ -1,8 +1,6 @@
-# Pitch (3 minutos)
+# Pitch
 
-## Roteiro Sugerido
-
-### 1. O Problema (30 seg)
+### 1. O Problema 
 
 Hoje, milhares de pessoas são vítimas de golpes bancários todos os dias.  
 Golpes como phishing, falso suporte bancário, clonagem de WhatsApp e transferências não reconhecidas geram prejuízos financeiros e emocionais.
@@ -18,7 +16,7 @@ Foi pensando nisso que surgiu o **SegurAI**.
 
 ---
 
-### 2. A Solução (1 min)
+### 2. A Solução
 
 O **SegurAI** é um assistente inteligente especializado exclusivamente em segurança bancária e prevenção de fraudes digitais.
 
@@ -40,7 +38,7 @@ O agente nunca inventa informações e sempre orienta o usuário a procurar cana
 
 ---
 
-### 3. Demonstração (1 min)
+### 3. Demonstração
 
 Nesta parte do vídeo, será mostrado:
 
@@ -59,7 +57,7 @@ Isso demonstra controle de escopo, segurança e assertividade.
 
 ---
 
-### 4. Diferencial e Impacto (30 seg)
+### 4. Diferencial e Impacto
 
 O grande diferencial do SegurAI é ser um agente especializado, não generalista.
 
@@ -80,6 +78,7 @@ O SegurAI mostra como a Inteligência Artificial pode ser usada de forma respons
 
 ---
 
+
 ## Link do Vídeo
 
-https://www.youtube.com/watch?v=3JGk9GetdQc
+https://youtu.be/3JGk9GetdQc

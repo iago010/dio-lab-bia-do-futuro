@@ -107,26 +107,32 @@ O objetivo é garantir que o agente:
 
 ---
 
-## Indicadores Quantitativos
-
-Após os testes, você pode calcular:
-
-- ✔ Taxa de acerto = (Respostas corretas ÷ Total de testes) × 100  
-- ✔ Média de notas por métrica  
-- ✔ Percentual de respostas seguras (sem alucinação)  
-
----
-
 ## Resultados
+
+### 📊 Resultado dos Testes Estruturados
+
+- Teste 1: ✔ Correto  
+- Teste 2: ✔ Correto  
+- Teste 3: ✔ Correto  
+- Teste 4: ✔ Correto  
+- Teste 5: ✔ Correto  
+
+**Taxa de acerto:** 100%
 
 ### ✅ Pontos Fortes
 
-- Segue bem as instruções de prompts;
-- Responde de forma clara;
+- Boa identificação de phishing.
+- Linguagem clara e educativa.
+- Não compartilhou informações sensíveis.
+- Respeitou o escopo de segurança bancária.
+- Sugestões de ação foram objetivas e práticas.
 
 ### ⚠ Pontos de Melhoria
 
-- Tempo de resposta alto;
+- Respostas muito longas.
+- Continuar testando com cenários mais complexos.
+- Avaliar respostas com múltiplas fraudes simultâneas.
+- Testar casos ambíguos para medir controle de alucinação.
 
 ---
 

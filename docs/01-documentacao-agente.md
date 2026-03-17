@@ -58,7 +58,7 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Chatbot web ou mobile (ex: Streamlit, WhatsApp API, Telegram Bot) |
-| LLM | glm-5:cloud para entendimento e geração de respostas |
+| LLM | GPT-4 ou GPT-5 via API para entendimento e geração de respostas |
 | Base de Conhecimento | Dados de segurança, padrões de fraudes, FAQ do banco, boas práticas em JSON/CSV |
 | Validação | Checagem de consistência e alerta de possíveis alucinações ou informações imprecisas |
 
