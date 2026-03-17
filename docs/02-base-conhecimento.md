@@ -33,7 +33,3 @@
 - FAQs e boas práticas são incluídas no prompt como **contexto de referência**, permitindo respostas precisas e educativas.  
 - Em casos de dúvida, o agente sugere links de verificação oficiais, mantendo a segurança do usuário.
 
----
-
-## Exemplo de Contexto Montado
-
